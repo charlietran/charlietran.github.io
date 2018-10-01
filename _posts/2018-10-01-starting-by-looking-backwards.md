@@ -64,10 +64,10 @@ facto head of engineering after the original CTO left.
 
 It was the best job I've ever had. And the people I met there are still some of
 my closest friends to this day. But going through most of a full startup life
-cycle, including all the big post-acquisition shifting, really drained me of my
-mental energy and my commitment to its mission. I knew I had to leave while I
-could still have those valued friendships, and before I was fully engulfed by
-the bitter cynicism that is endemic to tech nowadays.
+cycle, including the intense pre and post-acquisition adjustments, really
+drained me of my mental energy and my commitment to the job. I knew I had to
+leave while I could still have those valued friendships, and before I was fully
+engulfed by the bitter cynicism that is endemic to tech nowadays.
 
 And after I quit, I thought: *Great, I finally can do my own startup, or make
 videogames on my own, like I've always wanted!* But, it turns out that's really
