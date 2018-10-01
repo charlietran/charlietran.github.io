@@ -4,12 +4,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Charlie Tran
+author: Charlie Tran
 email:
 description: >-
 baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: charlietran
 github_username:  charlietran
+twitter:
+  username: charlietran
+  card: blog of Charlie Tran
+
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
@@ -24,3 +30,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - CNAME

@@ -2,41 +2,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>charlie tran</title>
-  <!--
-    color scheme nabbed from https://github.com/dracula/dracula-theme
-    Background 	  #282a36
-    Current Line 	#44475a
-    Selection 	  #44475a
-    Foreground 	  #f8f8f2
-    Comment 	    #6272a4
-    Cyan 	        #8be9fd
-    Green 	      #50fa7b
-    Orange 	      #ffb86c
-    Pink 	        #ff79c6
-    Purple 	      #bd93f9
-    Red 	        #ff5555
-    Yellow 	      #f1fa8c
-  -->
-  <style>
-    body {
-      font-family: monospace;
-      font-size: 1.2em;
-      padding: 1em 1em;
-      max-width: 720px;
-      margin: 0 auto;
-      background: #282a36;
-      color: #f8f8f2;
-    }
-    a {
-      color: #bd93f9;
-      text-decoration: underline;
-    }
-    a:hover {
-      color: #ff79c6;
-    }
-    li {
-      padding: 0.5em
-    }
-  </style>
+
+  {%- seo -%}
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/style.css">
+
+  <script>
+    // Use JS to set target attribute on all // links to _blank, since it's annoying
+    // to do so with Jekyll preprocessing
+    document.addEventListener("DOMContentLoaded", function() {
+      var links = document.querySelectorAll("a");
+      Array.prototype.forEach.call(links, function(link, i){
+        link.setAttribute('target','_blank');
+      });
+    });
+  </script>
 </head>
