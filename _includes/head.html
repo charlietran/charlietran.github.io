@@ -1,21 +1,20 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  {%- seo -%}
-
-  <link href="https://fonts.googleapis.com/css?family=Muli:300|Ovo" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/style.css">
-
-  <script>
-    // Use JS to set target attribute on all external links to _blank,
-    // since it's annoying to do so with Jekyll preprocessing
-    document.addEventListener("DOMContentLoaded", function() {
-      var links = document.querySelectorAll("a[href^=http]");
-      Array.prototype.forEach.call(links, function(link, i){
-        link.setAttribute('target','_blank');
-      });
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% seo %}
+<link href="https://fonts.googleapis.com/css?family=Muli:300|Ovo" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+  // Use JS to set target attribute on all external links to _blank,
+  // since it's annoying to do so with Jekyll preprocessing
+  document.addEventListener("DOMContentLoaded", function() {
+    var links = document.querySelectorAll("a[href^=http]");
+    Array.prototype.forEach.call(links, function(link, i){
+      link.setAttribute('target','_blank');
     });
-  </script>
+  });
+</script>
+
 </head>

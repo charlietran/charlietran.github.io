@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+{% include head.html %}
 
-  <body>
+<body>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <p>
-          <a href="/">charlietran.com</a>
-        </p>
-        {{ content }}
-      </div>
-    </main>
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <p>
+        <a href="/">charlietran.com</a>
+      </p>
+      {{ content }}
+    </div>
+  </main>
 
 
-    {%- include footer.html -%}
+  {%- include footer.html -%}
 
-  </body>
+</body>
 
 </html>
