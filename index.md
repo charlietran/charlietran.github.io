@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<img id="home-photo" src="/assets/home-photo.jpg" />
+<img title="actual size" id="home-photo" src="/assets/home-photo.jpg" />
 
 Charlie Tran is a programmer in Brooklyn, NY.
  
