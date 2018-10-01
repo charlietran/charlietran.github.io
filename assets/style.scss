@@ -24,8 +24,8 @@ body {
   padding: 1em 1em;
   max-width: 720px;
   margin: 0 auto;
-  background: #282a36;
-  color: #f8f8f2;
+  background: $background;
+  color: $foreground;
 }
 h1,h2,h3,h4,h5{
   font-family: 'Ovo', sans-serif;
@@ -39,6 +39,14 @@ a:hover {
 }
 li {
   padding: 0.5em
+}
+
+#home-photo {
+  border-radius: 50%;
+  border: 3px solid $foreground;
+  display: block;
+  margin: 1em auto;
+  width: 150px;
 }
 
 .post-content {

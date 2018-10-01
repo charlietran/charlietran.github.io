@@ -2,6 +2,8 @@
 layout: home
 ---
 
+<img id="home-photo" src="/assets/home-photo.jpg" />
+
 Charlie Tran is a programmer in Brooklyn, NY.
  
 Now: Studying game development and graphics programming at [Recurse
