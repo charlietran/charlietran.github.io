@@ -6,10 +6,12 @@ layout: default
 
 {%- if site.posts.size > 0 -%}
 <section>
-  <h3 class="post-list-heading">Blog Posts</h3>
   <!--
   (<a href="{{ "/feed.xml" | relative_url }}">RSS feed</a>)
   -->
+  <p>
+    <strong>Posts</strong>
+  </p>
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
