@@ -8,10 +8,9 @@ tags: life
 
 ### oh hello again
 
-It has been a great many years since I have tried to write anything
-publicly on a regular basis. More than a dozen in fact -- the last time I can
-recall doing so was just after high school, and I am now 34 years and 3 months
-old. 
+It has been a few years since I've regularly written anything in a public way.
+More than a dozen in fact -- the last time I can recall doing so was just after
+high school, and I am now 34 years and 3 months old. 
 
 My first instinct was to kick this off with a technical post, since my capital-B
 Brand purports to be: funny, handsome, knowledgable programmer. But [this

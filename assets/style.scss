@@ -18,14 +18,17 @@ $red: 	        #ff5555;
 $yellow: 	      #f1fa8c;
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 1.2em;
   line-height: 1.5;
   padding: 1em 1em;
   max-width: 720px;
   margin: 0 auto;
   background: #282a36;
-  color: #f8f8f2;
+  color: #b7b8bf;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Ovo', sans-serif;
 }
 a {
   color: #bd93f9;
@@ -41,7 +44,8 @@ li {
 .post-content {
   h3 {
     display: block;
-    font-weight:900;
+    color: #8ec9d2;
+    font-weight: 300;
   }
 
   p {
