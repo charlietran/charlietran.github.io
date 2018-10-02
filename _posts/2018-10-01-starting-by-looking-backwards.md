@@ -20,7 +20,7 @@ And to start off, let's do a conversation I often have with myself!
 
 <!--more-->
 
-[1]: https://jvns.ca/blog/2018/02/20/measuring-blog-success/) 
+[1]: https://jvns.ca/blog/2018/02/20/measuring-blog-success/ 
 
 ### how did you get here? 
 
