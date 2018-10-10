@@ -154,6 +154,11 @@ hr:last-child {display: none;}
   font-size: 22px;
   line-height: 27px;
   min-height: 27px;
+  @media print {
+    font-size: 18px;
+    line-height: 20px;
+    min-height: 20px;
+  }
 }
 
 .section_heading {
