@@ -146,6 +146,9 @@ hr:last-child {display: none;}
   margin-top: 15px;
   font-size: 18px;
   font-style: italic;
+  @media print {
+    a { text-decoration: none; }
+  }
 }
 
 #person_contact_info {margin-top: 5px;}

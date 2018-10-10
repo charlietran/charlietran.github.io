@@ -7,40 +7,41 @@ Center](https://www.recurse.com). Open to new opportunities that can leverage
 my web engineering and leadership experience towards new forms of media and 
 user interaction.*
 
-<h2 class="section_heading">Experience</h2>
 **Vimeo ([https://ott.vimeo.com](https://ott.vimeo.com))**  
 *Senior Director of Engineering / June 2016 - Oct 2017 / New York, NY*  
 
 
-* Joined Vimeo via its [acquisition of VHX](https://www.theverge.com/2016/5/2/11554434/vimeo-acquires-vhx).
-* Some projects I shipped while at Vimeo:
-  * Integrating the VHX Rails app into the Vimeo PHP stack where possible.
-  * Scaling the engineering team and Rails application stack to handle the
-    demands of a product pivot towards enterprise.
-  * A custom video transcoding pipeline running on AWS, based on Vimeo's
-    existing technology, to migrate from the pre-acquisition transcoding
-    provider and also add support for 4K/HDR video via HEVC.
+* Joined Vimeo via its [acquisition of VHX](https://www.theverge.com/2016/5/2/11554434/vimeo-acquires-vhx)
+* Some things I shipped at Vimeo:
+  * API-based integrations of the VHX Ruby on Rails app into the Vimeo PHP stack
+    to merge our media pipelines and customer bases
+  * Doubling the size of the engineering team
+  * A scaling & performance initiative for the Rails app stack to handle the
+    post-acquisition 10x traffic increase
+  * A custom video transcoding pipeline running on AWS to add support for 4K/HDR
+    video, decreasing our transcoding costs by 50% and improving playback quality
+  * Reworking our Java-based video streaming servers to allow for live-encoded
+    DRM and adaptive streaming
   * Migration of the Rails app and microservices to Docker along so they could
-    be cloud platform-agnostic.
+    be cloud platform-agnostic
 
 **VHX ([https://www.vhx.tv](https://www.vhx.tv))**  
 *Director of Engineering / Aug 2013 - June 2016 / Brooklyn, NY*  
 
-
-* Lead a team of Ruby on Rails engineers that took a streaming video product
-  from MVP to acquisition. The product enabled any size media business to launch
-  an OTT streaming video network, similar to Netflix or HBO.
-* Some of the things I built while at VHX:
+* Lead a team of 8 engineers that took a streaming video product from MVP to
+  acquisition
+  * Some things I shipped at VHX:
     * A payments infrastructure for our online video marketplace with thousands
       of sellers and millions of customers, compliant with federal and
-      international law.
-    * In-app purchasing for all our sellers' apps on iOS, Android, and Roku.
+      international law
+    * In-app purchasing for all our sellers' apps on iOS, Android, and Roku,
+      which boosted seller revenue by 200%
     * An upgrade for our streaming video infrastructure from progressive H264 to
-      encrypted Apple HLS.
+      encrypted Apple HLS
     * Automation of our Continuous Integration setup, allowing engineers to 
       deploy to production dozens of times a day and provision test servers via 
-      a custom chat bot.
-    * A zero-downtime migration of millions of paying credit card customers
+      a custom chat bot
+    * A zero-downtime credit card migration of 1 million+ paying customers
       between providers (Balanced to Stripe)
 
 **Consulting**  
@@ -55,11 +56,8 @@ user interaction.*
 
 *Pre-2011 experience available upon request*
 
-* * *
-
 **Education**  
 
-[California State University, Long Beach](http://www.csulb.edu)
-
+[California State University, Long Beach](http://www.csulb.edu)  
 Bachelor of Arts Degree in Film Production (Directing &amp; Cinematography),
 received June 2007. 
