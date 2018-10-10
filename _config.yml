@@ -27,4 +27,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - serve
+  - generate-resume-pdf
   - CNAME
