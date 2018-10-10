@@ -66,16 +66,16 @@ It was the best job I've ever had. And the people I met there are still some of
 my closest friends to this day. But going through most of a full startup life
 cycle, including the intense pre and post-acquisition adjustments, really
 drained me of my mental energy and my commitment to the job. I knew I had to
-leave while I could still have those valued friendships, and before I was fully
-engulfed by the bitter cynicism that is endemic to tech nowadays.
+leave while I could still have those valued friendships, and before I got too
+cynical about tech.
 
 And after I quit, I thought: *Great, I finally can do my own startup, or make
 videogames on my own, like I've always wanted!* But, it turns out that's really
 quite hard to do on your own. Thus, the floundering.
 
 It also didn't help that I disconnected from one of my main social circles just
-as 3 months of dark, brutal New York winter was starting up. Definitely going to
-time that better next time!
+as 3 months of dark, brutal New York winter was starting up. Definitely should
+have timed that better!
 
 ### okay, and before that?
 
