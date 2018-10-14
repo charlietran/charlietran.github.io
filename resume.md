@@ -8,7 +8,7 @@ my web engineering and leadership experience towards new forms of media and
 user interaction.*
 
 **Vimeo ([https://ott.vimeo.com](https://ott.vimeo.com))**  
-*Senior Director of Engineering / June 2016 - Oct 2017 / New York, NY*  
+*Senior Director of Engineering &bull; June 2016 - Oct 2017 &bull; New York, NY*  
 
 
 * Joined Vimeo via its [acquisition of VHX](https://www.theverge.com/2016/5/2/11554434/vimeo-acquires-vhx)
@@ -26,32 +26,32 @@ user interaction.*
     be cloud platform-agnostic
 
 **VHX ([https://www.vhx.tv](https://www.vhx.tv))**  
-*Director of Engineering / Aug 2013 - June 2016 / Brooklyn, NY*  
+*Director of Engineering &bull; Aug 2013 - June 2016 &bull; Brooklyn, NY*  
 
 * Lead a team of 8 engineers that took a streaming video product from MVP to
   acquisition
-  * Some things I shipped at VHX:
-    * A payments infrastructure for our online video marketplace with thousands
-      of sellers and millions of customers, compliant with federal and
-      international law
-    * In-app purchasing for all our sellers' apps on iOS, Android, and Roku,
-      which boosted seller revenue by 200%
-    * An upgrade for our streaming video infrastructure from progressive H264 to
-      encrypted Apple HLS
-    * Automation of our Continuous Integration setup, allowing engineers to 
-      deploy to production dozens of times a day and provision test servers via 
-      a custom chat bot
-    * A zero-downtime credit card migration of 1 million+ paying customers
-      between providers (Balanced to Stripe)
+* Some things I shipped at VHX:
+  * A payments infrastructure for our online video marketplace with thousands
+    of sellers and millions of customers, compliant with federal and
+    international law
+  * In-app purchasing for all our sellers' apps on iOS, Android, and Roku,
+    which boosted seller revenue by 200%
+  * An upgrade for our streaming video infrastructure from progressive H264 to
+    encrypted Apple HLS
+  * Automation of our Continuous Integration setup, allowing engineers to 
+    deploy to production dozens of times a day and provision test servers via 
+    a custom chat bot
+  * A zero-downtime credit card migration of 1 million+ paying customers
+    between providers (Balanced to Stripe)
 
 **Consulting**  
-*March 2011 - July 2013 / New York, NY*  
+*March 2011 - July 2013 &bull; New York, NY*  
 
 * Worked as a developer consultant for several NYC agencies. Projects included:
-  * Taylor Swift / Diet Coke Instagram Contest
   * Renaissance Hotels Homepage ([www.renhotels.com](http://www.renhotels.com))  
   * ?WhatIf! Homepage ([www.whatifinnovation.com](http://www.whatifinnovation.com))  
   * Millennium Villages ([www.millenniumvillages.org](http://www.millenniumvillages.org))  
+  * Taylor Swift / Diet Coke photo contest
   * Time Warner Cable (Connect A Million Minds, Wouldn't It Be Cool If)
 
 *Pre-2011 experience available upon request*
@@ -59,5 +59,4 @@ user interaction.*
 **Education**  
 
 [California State University, Long Beach](http://www.csulb.edu)  
-Bachelor of Arts Degree in Film Production (Directing &amp; Cinematography),
-received June 2007. 
+Bachelor of Arts Degree in Film Production (Directing &amp; Cinematography)
