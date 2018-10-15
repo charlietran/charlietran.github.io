@@ -2,6 +2,20 @@
 layout: resume_layout
 permalink: /resume/
 ---
+
+<a class="pdf-link screen-only" href="/resume.pdf">(download this as a PDF)</a>
+<div id="name">Charlie Tran</div>
+<div id="contact_info">
+  (858) 829-2148
+  &bull;
+  <a  href="mailto:hi@charlietran.com">hi@charlietran.com</a>
+  &bull;
+  <a href="http://github.com/charlietran">github.com/charlietran</a>
+</div>
+<hr>
+<div id="description">Engineering lead and full stack developer</div>
+<hr>
+
 *I'm currently studying graphics programming and game design at the [Recurse
 Center](https://www.recurse.com). Open to new opportunities that can leverage
 my web engineering and leadership experience towards new forms of media and 
