@@ -1,5 +1,6 @@
 #!/bin/bash
-bundle exec wkhtmltopdf --page-size Letter \
-  --margin-top 0.6in --margin-left 0.6in \
-  --margin-right 0.6in --margin-bottom 0.6in \
-  --print-media-type _site/resume/index.html _site/resume.pdf
+$(bundle show wkhtmltopdf-binary)/bin/wkhtmltopdf --page-size Letter \
+  --margin-top 0.75in --margin-left 0.75in \
+  --margin-right 0.75in --margin-bottom 0.75in \
+  --print-media-type --dpi 300 \
+  _site/resume/index.html _site/resume.pdf
