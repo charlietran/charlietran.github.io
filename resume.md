@@ -28,8 +28,9 @@ user interaction.*
 * Joined Vimeo via its [acquisition of VHX](https://www.theverge.com/2016/5/2/11554434/vimeo-acquires-vhx)
 * Some things I shipped at Vimeo:
   * API-based integrations of the VHX Ruby on Rails app into the Vimeo PHP stack
-    to merge our media pipelines and customer bases
-  * Doubling the size of the engineering team
+    to begin combining our media assets and customer databases
+  * Growing both backend &amp; frontend teams by 50% and organizing them into
+    cross-functional teams focused on product objectives instead of tech stacks
   * A scaling & performance initiative for the Rails app stack to handle the
     post-acquisition 10x traffic increase
   * A custom video transcoding pipeline running on AWS to add support for 4K/HDR
