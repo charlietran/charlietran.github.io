@@ -16,11 +16,6 @@ permalink: /resume/
 <div id="description">Engineering lead and full stack developer</div>
 <hr>
 
-*I'm currently studying graphics programming and game design at the [Recurse
-Center](https://www.recurse.com). Open to new opportunities that can leverage
-my web engineering and leadership experience towards new forms of media and 
-user interaction.*
-
 **Vimeo ([https://ott.vimeo.com](https://ott.vimeo.com))**  
 *Senior Director of Engineering &bull; June 2016 - Oct 2017 &bull; New York, NY*  
 
