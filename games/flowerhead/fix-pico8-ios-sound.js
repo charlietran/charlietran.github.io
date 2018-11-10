@@ -1,4 +1,3 @@
-
 (function() {
   // fetch original file name
   var s = document.scripts[document.scripts.length - 1]
@@ -18,7 +17,7 @@
 
   // create overlay
   var o = document.createElement('div')
-  o.innerHTML = 'click or tap screen to load game'
+  o.innerHTML = 'Click or tap screen to start Flowerhead'
   o.style.cssText = [
     'position: fixed',
     'top: 0',
