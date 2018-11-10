@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Flowerhead">           <!-- <= WEBAPP TITLE -->
-  <link rel="apple-touch-icon" href="icon.png">                           <!-- <= YOUR ICON -->
+  <link rel="apple-touch-icon" href="/games/flowerhead/icon.png">                           <!-- <= YOUR ICON -->
   <link rel="icon" href="icon.png">                                       <!-- <= YOUR ICON -->
   <!--
     Icon info:
@@ -24,13 +24,13 @@
   <!-- Info as seen by sharing apps like WhatsApp or Facebook, so they can show a preview-image and description when you share the URL -->
   <meta property="og:type"        content="game" />
   <meta property="og:title"       content="Flowerhead" />                                               <!-- <= GAME TITLE -->
-  <meta property="og:image"       content="icon.png" />  <!-- <= GAME IMAGE (you can also use a screenshot instead of the icon, but be sure to use the FULL URL here!) -->
+  <meta property="og:image"       content="/games/flowerhead/icon.png" />  <!-- <= GAME IMAGE (you can also use a screenshot instead of the icon, but be sure to use the FULL URL here!) -->
   <meta property="og:description" content="A game by Charlie Tran" />                                         <!-- <= GAME DESCRIPTION -->
 
   <style TYPE="text/css">
     /* ------- DEFINE BUTTON COLORS ------- */
     :root {
-      --btn: #00E436;
+      --btn: #008751;
       --btn--pressed: #008751;
 
       --btnIcon: #222222;
@@ -141,8 +141,7 @@
     document.addEventListener('keydown', onKeyDown_blocker, false);
   </script>
 
-  <script async type="text/javascript" src="flowerhead.js"></script>       <!-- <= INCLUDES YOUR cart.js FILE -->
-
+  <script src="/games/flowerhead/fix-pico8-ios-sound.js" data-original-file="/games/flowerhead/cart.js"></script>
 
   <!-- PICO8 CONTROL BUTTONS [reset] [pause] [fullscreen - not visible when using touch-control] [mute] -->
   <div class="pico8_btns">
@@ -166,33 +165,6 @@
 </div>
 
 <!-- ASK USER TO SET THE SITE AS A STANDALONE-WEBAPP -->
-
-<div class="show-if-touch">
-  <div class="show-if-not-standalone">
-    <div class="addToHomescreen__hint">
-      Add this website to your homescreen for better performance and audio
-    </div>
-  </div>
-</div>
-
-<style>
-  .addToHomescreen__hint {
-    font-size: .75em;
-    margin: .5em 2em;
-    text-align: center;
-    color: white;
-  }
-  .sourceLink{
-    font-size: .75em;
-    margin: .5em 2em;
-    text-align: center;
-    color: white;
-    font-weight: bold;}
-  .sourceLink a{
-    color: var(--btn);
-    text-decoration: underline;
-  }
-</style>
 
 <style>
   /* toggle between different buttonsets: */
@@ -382,7 +354,8 @@
           <div class="btn__rightArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M7.464,0.47L26.793,15L7.464,29.53L7.464,0.47Z" style="fill:#222;"/></svg></div>
         </div>
 
-        <div class="btn-fire-x btn btn--wide pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" style="fill:#222;"/></svg></div>
+        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" style="fill:#222;"/></svg></div>
+        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" style="fill:#222;"/></svg></div>
 
         <div class="clear"></div>
       </div>
@@ -466,11 +439,6 @@
 <script type="text/javascript">
   // --------- HANDLE TOUCH-EVENTS ON BUTTONS ---------
   //
-  // IMPORTANT FOR TESTING:
-  //   The buttons ONLY work with touch-events, so you can't test them
-  //   on a regular browser with your mouse.
-  //   Chrome allows for simulating touch-events in the developer-tools:
-  //   -> https://developers.google.com/web/tools/chrome-devtools/device-mode/
   if(window.TOUCH) {
     var
       GPIO_BUTTONSET_INDEX=0,
