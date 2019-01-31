@@ -1,4 +1,4 @@
-<html manifest="game.manifest">                                           <!-- <= LINK TO MANIFEST (to cache files for offline-access= -->
+<html manifest="flowerhead.manifest">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Flowerhead">           <!-- <= WEBAPP TITLE -->
-  <link rel="apple-touch-icon" href="/games/flowerhead/icon.png">                           <!-- <= YOUR ICON -->
+  <link rel="apple-touch-icon" href="/games/flowerhead/icon.png">         <!-- <= YOUR ICON -->
   <link rel="icon" href="icon.png">                                       <!-- <= YOUR ICON -->
   <!--
     Icon info:
@@ -27,18 +27,25 @@
   <meta property="og:image"       content="/games/flowerhead/icon.png" />  <!-- <= GAME IMAGE (you can also use a screenshot instead of the icon, but be sure to use the FULL URL here!) -->
   <meta property="og:description" content="A game by Charlie Tran" />                                         <!-- <= GAME DESCRIPTION -->
 
+ <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
   <style TYPE="text/css">
     /* ------- DEFINE BUTTON COLORS ------- */
     :root {
-      --btn: #008751;
-      --btn--pressed: #008751;
+      --btn: #000;
+      --btn--pressed: #000;
 
-      --btnIcon: #222222;
-      --btnIcon--pressed: #111111;
-
-      --btn__analogBg: #232f37;
+      --btnIcon: #000;
+      --btnIcon--pressed: #000;
     }
-    body { font-family: Verdana, Arial, sans-serif; padding: 0; margin: 0; outline: none; background: #222; overflow: hidden; }
+    body {
+      font-family: 'Press Start 2P', monospace;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      background: #000;
+      overflow: hidden;
+    }
 
     /* ------ POSITION GAME-CANVAS ------ */
     canvas#canvas {
@@ -51,17 +58,19 @@
       -ms-interpolation-mode: nearest-neighbor;
       border: 0;
     }
+
     @media screen and (max-width: 512px) {        /* game shrinks to fit screen on smaller screens */
       canvas#canvas { width: 100%; height: auto; } }
-    .canvas-wrapper { text-align: center; }
-    .canvas-wrapper canvas { margin: 0 auto; }    /* center game */
+      .canvas-wrapper { text-align: center; }
+      .canvas-wrapper canvas { margin: 0 auto; }    /* center game */
+
     @media screen and (min-height: 700px) {       /* game has top-margin on high screens */
       .canvas-wrapper { margin-top: 80px; } }
     @media screen and (min-height: 880px) {       /* game has more top-margin on higher screens */
       .canvas-wrapper { margin-top: 180px; } }
 
-
     /* ------ pico8 control buttons [reset] [pause] [mute] ------ */
+    .pico8_btns { display: none; }
     .pico8_btns { text-align: center; }
     .pico8_el { width:82px; display:inline-block; margin: 1px; padding: 4px; text-align: center; color:#fff; background-color:#777; font-size: 9pt; cursor: pointer; }
     .pico8_el a{ text-decoration: none; color:#fff; }
@@ -139,29 +148,62 @@
       }
     };
     document.addEventListener('keydown', onKeyDown_blocker, false);
+
+    // load cart with overlay hack to ensure sound on iOS
+    (function() {
+      var file = '/games/flowerhead/cart.js';
+
+      // strip vendor prefixes
+      window.AudioContext = window.AudioContext
+        || window.webkitAudioContext
+        || window.mozAudioContext
+        || window.oAudioContext
+        || window.msAudioContext;
+
+      // make AudioContext a singleton so we control it
+      var ctx = new window.AudioContext
+      window.AudioContext = function() { return ctx };
+
+      // create overlay
+      var o = document.createElement('div');
+      o.innerHTML = 'Click or tap screen to start Flowerhead'
+      o.style.cssText = [
+        'position: fixed',
+        'top: 0',
+        'left: 0',
+        'right: 0',
+        'bottom: 0',
+        'background: #000',
+        'color: white',
+        'text-align: center',
+        'padding-top: 200px',
+      ].map(function(p) { return p + ';' }).join('');
+      document.body.appendChild(o);
+
+      // disable scrolling
+      document.body.style.overflow = 'hidden';
+      o.onclick = function() {
+        // ...until overlay is clicked
+        document.body.style.overflow = ''
+
+        // then unlock AudioContext on iOS
+        var buffer = ctx.createBuffer(1, 1, 22050)
+        var source = ctx.createBufferSource()
+        source.connect(ctx.destination)
+        if (source.noteOn) source.noteOn(0)
+        else source.start(0)
+
+        // dynamically load original script
+        var s = document.createElement('script')
+        s.setAttribute('src', file)
+        document.body.appendChild(s)
+
+        // and delete overlay div
+        document.body.removeChild(o)
+      }
+    })()
+
   </script>
-
-  <script src="/games/flowerhead/fix-pico8-ios-sound.js" data-original-file="/games/flowerhead/cart.js"></script>
-
-  <!-- PICO8 CONTROL BUTTONS [reset] [pause] [fullscreen - not visible when using touch-control] [mute] -->
-  <div class="pico8_btns">
-    <span class="pico8_el" onclick="Module.pico8Reset();">
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAaklEQVR4Ae2dOwoAMQhE15A+rfc/3bZ7AlMnQfywCkKsfcgMM9ZP+QHtIn0vLeBAFduiFdQ/0DmvtR5LXJ6CPSXe2ZXcFNlTxFbemKrbZPs35XogeS9xeQr+anT6LzoOwEDwZJ7jwhXUnwkTTiDQ2Ja34AAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII="
-        alt="Reset" width=12 height=12/> Reset</span>
-    <span class="pico8_el" onclick="Module.pico8TogglePaused();">
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAPUlEQVR4Ae3doQ0AIAxEUWABLPtPh2WCq26DwFSU/JPNT166QSu/Hg86W9dwLte+diP7AwAAAAAAgD+A+jM2ZAgo84I0PgAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII="
-        alt="Pause" width=12 height=12/> Pause</span>
-    <span class="pico8_el show-if-not-touch" onclick="Module.requestFullScreen(true, false);">
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAaklEQVR4Ae2dsQ1AIQhExfze1v2ns3UCrfgFhmgUUAoGgHscp21wX9BqaZoDojbB96OkDJKNcTN2BHTyYNYmoT2BlPL7BKgcPfHjAVXKKadkHOn9K1r16N0czN6a95N8mnA7Aq2fTZ3Af3UKmCSMazL8HwAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII="
-        alt="Fullscreen" width=12 height=12/> Fullscreen</span>
-    <span class="pico8_el" onclick="Module.pico8ToggleSound();">
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAXklEQVR4Ae2doQ4AIQxD4YLH8v9fh+ULhjpxxSwLg2uyapr1JRu1iV5Z+1BGl4+xNpX38SYo2uRvYiT5LwEmt+ocgXVLrhPEgBiw8Q5w7/kueSkK+D2tJO4E/I3GrwkqQCBabEj/4QAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII="
-        alt="Toggle Sound" width=12 height=12/> Sound</span>
-  </div>
 </div>
 
 <!-- ASK USER TO SET THE SITE AS A STANDALONE-WEBAPP -->
@@ -191,7 +233,7 @@
     width: 24%;
     max-width: 180px;
   }
-  .btn svg path {
+  .btn svg path, .btn svg circle {
     fill: var(--btnIcon) !important;
   }
   @media screen and (max-height: 640px) and (min-width: 500px) {  /* make canvas smaller for small screen-height to make room for touch-buttons */
@@ -214,8 +256,46 @@
     width: 50px; height: 50px; position: absolute; background-color: var(--btn); border-radius: 25px;
     margin-left: -25px; margin-top: -25px;
   }
-  .axis-leftRight .btn__leftArrowStyle { position: absolute; width: 50%; height: 100%; }
-  .axis-leftRight .btn__rightArrowStyle { position: absolute; width: 50%; height: 100%; right: 0; }
+
+  .axis-leftRight .btn__leftArrowStyle { 
+    position: absolute; 
+    width: 50%; 
+    height: 100%; 
+
+
+  }
+
+  .btns svg { 
+    background: #fff;
+    padding: 5px 10px;
+    display: block;
+    box-shadow: 2px 5px 0 0 #555;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .pressed_X .btn-fire-x svg,
+  .pressed_O .btn-fire-o svg,
+  .pressed_U .btn__upArrowStyle--bg svg,
+  .pressed_D .btn__downArrowStyle--bg svg,
+  .pressed_L .btn__leftArrowStyle--bg svg,
+  .pressed_R .btn__rightArrowStyle--bg svg,
+  .pressed_L .axis-leftRight .btn__leftArrowStyle svg,
+  .pressed_R .axis-leftRight .btn__rightArrowStyle svg 
+  {
+    margin-top: -12px;
+    margin-left: -12px;
+    box-shadow:none;
+  }
+
+
+  .axis-leftRight .btn__rightArrowStyle { 
+    position: absolute; 
+    width: 50%; 
+    height: 100%; 
+    right: 0; 
+  }
+
   .axis-upDown .btn__upArrowStyle { position: absolute; width: 100%; height: 50%; }
   .axis-upDown .btn__downArrowStyle { position: absolute; width: 100%; height: 50%; bottom: 0; }
   .btn__horAxisBg {
@@ -261,6 +341,7 @@
     height: 30%;
     bottom: 0;
   }
+
   .axis-upDownLeftRight.axis-upDownLeftRight--upDownAtFullWidth .btn__upArrowStyle,
   .axis-upDownLeftRight.axis-upDownLeftRight--upDownAtFullWidth .btn__downArrowStyle {
     width: 100%;
@@ -330,14 +411,14 @@
           <div class="btn__upArrowStyle btn__upArrowStyle--bg"></div>
           <div class="btn__downArrowStyle btn__downArrowStyle--bg"></div>
 
-          <div class="btn__leftArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M22.536,0.47L3.207,15L22.536,29.53L22.536,0.47Z" style="fill:#222;"/></svg></div>
-          <div class="btn__upArrowStyle"><svg width="30" height="30" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="UP" d="M0.113,5.409l3.487,-4.639l3.487,4.639l-6.974,0Z" style="fill:#222;"/></svg></div>
-          <div class="btn__downArrowStyle"><svg width="30" height="30" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="DOWN" d="M7.087,1.791l-3.487,4.639l-3.487,-4.639l6.974,0Z" style="fill:#222;"/></svg></div>
-          <div class="btn__rightArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M7.464,0.47L26.793,15L7.464,29.53L7.464,0.47Z" style="fill:#222;"/></svg></div>
+          <div class="btn__leftArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M22.536,0.47L3.207,15L22.536,29.53L22.536,0.47Z" /></svg></div>
+          <div class="btn__upArrowStyle"><svg width="30" height="30" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="UP" d="M0.113,5.409l3.487,-4.639l3.487,4.639l-6.974,0Z" /></svg></div>
+          <div class="btn__downArrowStyle"><svg width="30" height="30" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="DOWN" d="M7.087,1.791l-3.487,4.639l-3.487,-4.639l6.974,0Z" /></svg></div>
+          <div class="btn__rightArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M7.464,0.47L26.793,15L7.464,29.53L7.464,0.47Z"/></svg></div>
         </div>
 
-        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" style="fill:#222;"/></svg></div>
-        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" style="fill:#222;"/></svg></div>
+        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z"/></svg></div>
+        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253"/></svg></div>
 
         <div class="clear"></div>
       </div>
@@ -350,12 +431,34 @@
       -------------------------------->
       <div class="btns buttonset buttonset-2">
         <div class="axis-leftRight btn btn--extra-wide pull-left">
-          <div class="btn__leftArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M22.536,0.47L3.207,15L22.536,29.53L22.536,0.47Z" style="fill:#222;"/></svg></div>
-          <div class="btn__rightArrowStyle"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M7.464,0.47L26.793,15L7.464,29.53L7.464,0.47Z" style="fill:#222;"/></svg></div>
+          <div class="btn__leftArrowStyle">
+            <svg width="40" height="30" viewBox="0 0 40 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+              <path d="
+                M 40,0
+                L 10,0
+                L 0,15 
+                L 10,30
+                L 40,30
+                L 40,0
+                Z" />
+            </svg>
+            </div>
+          <div class="btn__rightArrowStyle">
+            <svg width="40" height="30" viewBox="0 0 40 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+              <path d="
+                M 0,0
+                L 30,0
+                L 40,15
+                L 30,30
+                L 0,30
+                L 0,0
+              Z" />
+            </svg>
+          </div>
         </div>
 
-        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" style="fill:#222;"/></svg></div>
-        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" style="fill:#222;"/></svg></div>
+        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" /></svg></div>
+        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" /></svg></div>
 
         <div class="clear"></div>
       </div>
