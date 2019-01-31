@@ -267,24 +267,36 @@
 
   .btns svg { 
     background: #fff;
-    padding: 5px 10px;
     display: block;
     box-shadow: 2px 5px 0 0 #555;
     border: none;
     border-radius: 10px;
   }
 
-  .pressed_X .btn-fire-x svg,
-  .pressed_O .btn-fire-o svg,
-  .pressed_U .btn__upArrowStyle--bg svg,
-  .pressed_D .btn__downArrowStyle--bg svg,
-  .pressed_L .btn__leftArrowStyle--bg svg,
-  .pressed_R .btn__rightArrowStyle--bg svg,
+  .btns .axis-leftRight svg {
+    margin-left: -28px !important;
+    padding: 5px 10px;
+  }
+
+
   .pressed_L .axis-leftRight .btn__leftArrowStyle svg,
-  .pressed_R .axis-leftRight .btn__rightArrowStyle svg 
-  {
-    margin-top: -12px;
-    margin-left: -12px;
+  .pressed_R .axis-leftRight .btn__rightArrowStyle svg {
+    margin-top: -12px !important;
+    margin-left: -25px !important;
+    box-shadow:none;
+  }
+
+  .btns .btn-fire-x svg,
+  .btns .btn-fire-o svg {
+    margin-top: -20px;
+    margin-left: -25px;
+    padding: 10px 15px;
+  }
+
+  .pressed_X .btns .btn-fire-x svg,
+  .pressed_O .btns .btn-fire-o svg {
+    margin-top: -17px;
+    margin-left: -22px;
     box-shadow:none;
   }
 
@@ -457,7 +469,9 @@
           </div>
         </div>
 
-        <div class="btn-fire-x btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" /></svg></div>
+        <div class="btn-fire-x btn pull-right">
+          <svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+            <path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" /></svg></div>
         <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" /></svg></div>
 
         <div class="clear"></div>
