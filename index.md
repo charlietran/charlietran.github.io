@@ -6,10 +6,9 @@ layout: home
 
 Charlie Tran is a programmer in Brooklyn, NY.
  
-Now: Studying game development and graphics programming at [Recurse
-Center](https://recurse.com). Independently working on games and AR/VR
-experiences.
+Currently: Consulting for NYC startups &amp; independently creating games
 
-Previously: Senior Director of Engineering at [Vimeo](https://vimeo.com).
-Director of Engineering at [VHX](https://ott.vimeo.com) (now Vimeo OTT).
-Senior Developer at [FreeAssociation](https://freeassociation.is/).
+Previously: Fall 2018 batch at the [Recurse Center](https://www.recurse.com/).
+Senior Director of Engineering at [Vimeo](https://vimeo.com). Director of
+Engineering at [VHX](https://ott.vimeo.com) (now Vimeo OTT). Senior Developer at
+[FreeAssociation](https://freeassociation.is/).
