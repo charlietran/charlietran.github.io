@@ -4,6 +4,7 @@ layout: default
 {{ content }}
 
 {%- if site.posts.size > 0 -%}
+{%- if false -%}
 <section>
   <!--
   (<a href="{{ "/feed.xml" | relative_url }}">RSS feed</a>)
@@ -23,4 +24,5 @@ layout: default
     {%- endfor -%}
   </ul>
 </section>
+{%- endif -%}
 {%- endif -%}
