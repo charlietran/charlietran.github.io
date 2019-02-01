@@ -32,8 +32,8 @@
   <style TYPE="text/css">
     /* ------- DEFINE BUTTON COLORS ------- */
     :root {
-      --btn: #000;
-      --btn--pressed: #000;
+      --btn: transparent;
+      --btn--pressed: transparent;
 
       --btnIcon: #000;
       --btnIcon--pressed: #000;
@@ -65,7 +65,8 @@
       .canvas-wrapper canvas { margin: 0 auto; }    /* center game */
 
     @media screen and (min-height: 700px) {       /* game has top-margin on high screens */
-      .canvas-wrapper { margin-top: 80px; } }
+      .canvas-wrapper { margin-top: 40px; } }
+
     @media screen and (min-height: 880px) {       /* game has more top-margin on higher screens */
       .canvas-wrapper { margin-top: 180px; } }
 
@@ -144,9 +145,15 @@
     Controls: left/right arrows, Z to jump, X to throw
   </p>
   <p>
-  Created by <a href="https://www.charlietran.com">Charlie Tran</a> in <a
-                href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> during the Fall 2018 batch
-                at the <a href="https://www.recurse.com/">Recurse Center</a>.
+    Created by <a target="_blank" href="https://www.charlietran.com">Charlie Tran</a> in
+    <a target="_blank" href="https://www.lexaloffle.com/pico-8.php">PICO-8</a>
+    during the Fall 2018 batch at the
+    <a target="_blank" href="https://www.recurse.com/">Recurse Center</a>
+  </p>
+  <p>
+    Feedback appreciated via <a target="_blank" href="mailto:hi@charlietran.com">Email</a>
+    or <a target="_blank" href="http://twitter.com/charlietran">Twitter</a>. View the source on
+    <a target="_blank" href="https://github.com/charlietran/flowerhead">Github</a>
   </p>
 </div>
 
@@ -495,10 +502,10 @@
           </div>
         </div>
 
+        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" /></svg></div>
         <div class="btn-fire-x btn pull-right">
           <svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
             <path d="M9.05,3.207L15,9.157L20.95,3.207L26.793,9.05L20.843,15L26.793,20.95L20.95,26.793L15,20.843L9.05,26.793L3.207,20.95L9.157,15L3.207,9.05L9.05,3.207Z" /></svg></div>
-        <div class="btn-fire-o btn pull-right"><svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><circle cx="15" cy="15" r="11.253" /></svg></div>
 
         <div class="clear"></div>
       </div>
