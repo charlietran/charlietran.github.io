@@ -1,4 +1,4 @@
-<html manifest="flowerhead.manifest">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,14 +30,6 @@
  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
   <style TYPE="text/css">
-    /* ------- DEFINE BUTTON COLORS ------- */
-    :root {
-      --btn: transparent;
-      --btn--pressed: transparent;
-
-      --btnIcon: #000;
-      --btnIcon--pressed: #000;
-    }
     body {
       font-family: 'Press Start 2P', monospace;
       padding: 0;
@@ -86,12 +78,28 @@
     .not-standalone .show-if-standalone { display: none; }
     .is-standalone .show-if-not-standalone { display: none; }
 
-    #content {
+
+
+    #info {
       text-align: center;
       color: #fff;
       line-height: 1.5;
       font-size: 0.8em;
+      max-width: 512px;
+      margin: 0 auto;
     }
+
+    #more-info {
+      display: block;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      margin: 8px auto;
+      width: 60%;
+      border-radius: 6px;
+      border: 1px solid #fff;
+    }
+
 
     a, a:visited, a:active {
       color: #fff;
@@ -140,21 +148,14 @@
   <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
 </div>
 
-<div id="content">
+<div id="info">
   <p class="show-if-not-touch">
     Controls: left/right arrows, Z to jump, X to throw
   </p>
-  <p>
-    Created by <a target="_blank" href="https://www.charlietran.com">Charlie Tran</a> in
-    <a target="_blank" href="https://www.lexaloffle.com/pico-8.php">PICO-8</a>
-    during the Fall 2018 batch at the
-    <a target="_blank" href="https://www.recurse.com/">Recurse Center</a>
-  </p>
-  <p>
-    Feedback appreciated via <a target="_blank" href="mailto:hi@charlietran.com">Email</a>
-    or <a target="_blank" href="http://twitter.com/charlietran">Twitter</a>. View the source on
-    <a target="_blank" href="https://github.com/charlietran/flowerhead">Github</a>
-  </p>
+
+  <a target="_blank" id="more-info" href="https://github.com/charlietran/flowerhead">
+    more info about the game
+  </a>
 </div>
 
 <div>
@@ -180,7 +181,7 @@
 
     // load cart with overlay hack to ensure sound on iOS
     (function() {
-      var file = '/games/flowerhead/cart.js';
+      var file = 'cart.js';
 
       // strip vendor prefixes
       window.AudioContext = window.AudioContext
@@ -253,7 +254,9 @@
     width: 100%;
     direction:ltr;
     height: 120px;
+    background-color: transparent;
   } /* wrapper for buttons - docks to bottom */
+
   .btn { /* generic button style: prevent text selection on touch */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -263,13 +266,13 @@
     height: 100%;
     font-size: 35px;
     font-weight: bold;
-    color: var(--btnIcon);
+    color: #000;
     text-align: center;
     width: 24%;
     max-width: 180px;
   }
   .btn svg path, .btn svg circle {
-    fill: var(--btnIcon) !important;
+    fill: #000 !important;
   }
   @media screen and (max-height: 640px) and (min-width: 500px) {  /* make canvas smaller for small screen-height to make room for touch-buttons */
     canvas#canvas { max-width: 420px; height: auto; }
@@ -280,15 +283,15 @@
   .btn--extra-wide { width: 48%; max-width: 280px; }
   .pull-left { float:left; }
   .pull-right { float:right; }
-  .axis-leftRight { position: relative; background: var(--btn);}
-  .axis-upDown { position: relative; background: var(--btn); height: 130%; top: -30%; }
+  .axis-leftRight { position: relative; background: transparent;}
+  .axis-upDown { position: relative; background: transparent; height: 130%; top: -30%; }
   .axis-upDownLeftRight { position: relative; height: 140%; top: -40%; }
-  .axis-analog { position: relative; height: 140%; top: -40%; background-color: var(--btn__analogBg); }
+  .axis-analog { position: relative; height: 140%; top: -40%; background-color: transparent; }
   .btn__stick {
     position: absolute; left: 50%; top: 50%;
   }
   .btn__stick__inner {
-    width: 50px; height: 50px; position: absolute; background-color: var(--btn); border-radius: 25px;
+    width: 50px; height: 50px; position: absolute; background-color: transparent; border-radius: 25px;
     margin-left: -25px; margin-top: -25px;
   }
 
@@ -345,7 +348,7 @@
   .axis-upDown .btn__downArrowStyle { position: absolute; width: 100%; height: 50%; bottom: 0; }
   .btn__horAxisBg {
     position: absolute;
-    background-color: var(--btn);
+    background-color: transparent;
     top: 30%;
     height: 40%;
     width: 90%;
@@ -353,7 +356,7 @@
   }
   .btn__vertAxisBg {
     position: absolute;
-    background-color: var(--btn);
+    background-color: transparent;
     left: 35%;
     width: 30%;
     height: 100%;
@@ -405,7 +408,7 @@
   .btn .btn__stick__inner svg{
     margin-left: -23px; margin-top: -23px;
   }
-  .btn-fire-x, .btn-fire-o { background-color: var(--btn); position: relative; }
+  .btn-fire-x, .btn-fire-o { background-color: transparent; position: relative; }
   .pressed_X .btn-fire-x,
   .pressed_O .btn-fire-o,
   .pressed_U .btn__upArrowStyle--bg,
@@ -414,7 +417,7 @@
   .pressed_R .btn__rightArrowStyle--bg,
   .pressed_L .axis-leftRight .btn__leftArrowStyle,
   .pressed_R .axis-leftRight .btn__rightArrowStyle {
-    background-color: var(--btn--pressed); /* change color when pressed */
+    background-color: transparent; /* change color when pressed */
   }
   .pressed_X .btn-fire-x svg path,
   .pressed_O .btn-fire-o svg path,
@@ -424,7 +427,7 @@
   .pressed_R .btn__rightArrowStyle--bg svg path,
   .pressed_L .axis-leftRight .btn__leftArrowStyle svg path,
   .pressed_R .axis-leftRight .btn__rightArrowStyle svg path {
-    fill: var(--btnIcon--pressed) !important; /* change color when pressed */
+    fill: transparent !important; /* change color when pressed */
   }
   .clear{ clear:both; }
 </style>
