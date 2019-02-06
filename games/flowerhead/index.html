@@ -1,33 +1,24 @@
+<!-- Based on https://github.com/headjump/pico8_html_template -->
 <html>
 <head>
+  <title>Flowerhead</title>                                               <!-- <= WEBSITE TITLE -->
+  <meta name="apple-mobile-web-app-title" content="Flowerhead">
+  <meta name="description" content="Flowerhead">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="icon.png">
+
+  <meta property="og:type"        content="game" />
+  <meta property="og:title"       content="Flowerhead" />
+  <meta property="og:image"       content="icon.png" />
+  <meta property="og:description" content="A game by Charlie Tran" />
   <meta charset="utf-8">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--
-    Based on https://github.com/headjump/pico8_html_template
-    You are free to remove this comment or leave it here so others may find and use the repo as well :)
-  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Flowerhead">           <!-- <= WEBAPP TITLE -->
-  <link rel="apple-touch-icon" href="/games/flowerhead/icon.png">         <!-- <= YOUR ICON -->
-  <link rel="icon" href="icon.png">                                       <!-- <= YOUR ICON -->
-  <!--
-    Icon info:
-    There are many different resolutions for different devices supported or recommended,
-    but I wanted this template to be easy to use "manually" and for me it works fine
-    to have a single PNG icon at 200x200. (200x200 is the minimum for facebok-sharing to use the og:image as thumbnail)
-  -->
-  <title>Flowerhead</title>                                               <!-- <= WEBSITE TITLE -->
-  <meta name="description" content="Flowerhead">                    <!-- <= SITE DESCRIPTION as seen by web-search-engines -->
 
-  <!-- Info as seen by sharing apps like WhatsApp or Facebook, so they can show a preview-image and description when you share the URL -->
-  <meta property="og:type"        content="game" />
-  <meta property="og:title"       content="Flowerhead" />                                               <!-- <= GAME TITLE -->
-  <meta property="og:image"       content="/games/flowerhead/icon.png" />  <!-- <= GAME IMAGE (you can also use a screenshot instead of the icon, but be sure to use the FULL URL here!) -->
-  <meta property="og:description" content="A game by Charlie Tran" />                                         <!-- <= GAME DESCRIPTION -->
-
- <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
   <style TYPE="text/css">
     body {
@@ -38,8 +29,7 @@
       background: #000;
       overflow: hidden;
     }
-
-    /* ------ POSITION GAME-CANVAS ------ */
+    /* ------ GAME-CANVAS ------ */
     canvas#canvas {
       width: 512px; height: 512px;                /* max game size: 512px */
       image-rendering: optimizeSpeed;
@@ -146,7 +136,7 @@
 </script>
 
 <div class="canvas-wrapper">
-  <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+  <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
 </div>
 
 <div id="info">
@@ -197,7 +187,7 @@
 
       // create overlay
       var o = document.createElement('div');
-      o.innerHTML = 'Click or tap screen to start Flowerhead'
+      o.innerHTML = 'Click to start game'
       o.style.cssText = [
         'position: fixed',
         'top: 0',
