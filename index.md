@@ -7,7 +7,7 @@ layout: home
 Charlie Tran is a programmer in Brooklyn, NY.
  
 Currently:  
-Consulting for NYC startups &amp; independently creating games
+Engineering at [Parsec](https://parsecgaming.com), independently creating games
 
 Previously:  
 Fall 2018 batch at the [Recurse Center](https://www.recurse.com/)  
