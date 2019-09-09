@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/charlietran
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://charlietran.com
+  * I am charlietran (https://keybase.io/charlietran) on keybase.
+  * I have a public key with fingerprint B7ED 550C 9BAF 22D2 541D  26E2 28FC D5CE 2E12 53E6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101da55b3d534de0677a0d239e38f6ee0e94e2ac5a2dfccdf68e5aab7a3e20bb9490a",
+      "fingerprint": "b7ed550c9baf22d2541d26e228fcd5ce2e1253e6",
+      "host": "keybase.io",
+      "key_id": "28fcd5ce2e1253e6",
+      "kid": "0101da55b3d534de0677a0d239e38f6ee0e94e2ac5a2dfccdf68e5aab7a3e20bb9490a",
+      "uid": "713c014f07f49465aa5b59f85df6e919",
+      "username": "charlietran"
+    },
+    "merkle_root": {
+      "ctime": 1568048972,
+      "hash_meta": "5b44b70f350ba7f8f9135e080c2bfb1498cbe3abcd0cf774c2d9f27c04e48d48",
+      "seqno": 6214821
+    },
+    "revoke": {
+      "sig_ids": [
+        "74483be5b38fe703916440bff8558ab4dbffdf2b1572fc7d352f5c3cc2322cb50f"
+      ]
+    },
+    "service": {
+      "hostname": "charlietran.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1568048972,
+  "expire_in": 157680000,
+  "prev": "2d40cb434e0993eb419590f165541f6965a2f94ceb3533aa84e3d64d94c27b14",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMKzAnicrVNdaB1FGL1pjdJgUGuCaB6q20SwhDg7P7s7t7SgFko0L5Wk0mi5nZ9v
+7l3uvbu3u5vbJmkasQ+1iIhFauKDVVApNAVtWqharKRSGtontfpQFIkUbPqDFQSt
+is4GxQf76L7szrfnnO/MmW8+a19eaGvZcubF+wZnH8At5+bGRwpbm3sHxh0Z61Gn
+OO5UYekFNQ1pVqqG2ik6yEWuFoxJohmhGpDn+wJpTDiQwHgACDgFLBQTWBultPEC
+YEJIXxDASEpOORJOr2PCqAxJIwmjzMpKHzRjSHEpDMYaM+pq7AHGgVGaKcDgYkbA
+s8RKnOYMa06KFPrC2NbsorRk7xb4/9n3yJKc7xKFXGqQbyinngUyybgJmOUBd3kO
+TCGJRB0sWlVEUgshS0TkTPQ6dUiqNSglcZzl+aoszFEu8wJEA+5ju0eRVkp1yIQl
+M0mp9JEhDEnhm8BwlzBAAVJYGulSHigJREilkTK+TxXW3GBfIQo00DSwVlLYHsVO
+0cMuDbBrHSTQjKuQN0/Dsk0udYrPOj6lAZFgIwoM+Ihw16MUSWN3xQIhqbaf2mDp
+Mh8b5WvCsGGKKIUJxkoyZJytE3mzpBmqJfH8qP4bQZ+K69ZUI4mzWMU1+7OSZY20
+mEeTjTZy9A6Qpb91SjKMtJ0Vy2hCkoZxZKOyyFukBjsbYQKlMEcw39btk/eBZj4Z
+miIlKaGAOCcgqcsZR8b1mJ0143F7hthwqkASRogQAQWiPaptCfs25n9jDKxNUbaS
+NrtIZCMJOBNznz53W6GlrXB767L8DhXaVtz9z816evSOX1t+XDX08MfSqa5Dl2si
+6vlz9/EfVr565p65B7PJ/hPLDz3Tevn8lY79338wuijWHJAdHduuz08f3b9p10LX
+STK15+pMa1pfO3hifp9597tHfz69/vRvhwaji6H+/fOzjcZDe97YXt72/LIi2/3y
+/ZM/LbziNDsXP3mn/6Vvj8x0nvymNGh2Jq8X5ysfne8dKl+bml68efPtp+a79t35
+XoGWTp17c92GDeqxK92rd9yYHXttvPOPiwc3T35Y2DiwMbjUOsv6Vr7w/tHhHmfv
+0F2XFie/XNFdPXWjfWD19PXCqgsHe8aOXWifenLzlnvHHnl8k78reUstdJ89fODr
+L6rXZo5d/eWrnq7hYLj/ib8Aaj6Cww==
+=qqSu
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/charlietran
+
+==================================================================
+
