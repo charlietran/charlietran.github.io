@@ -70,7 +70,7 @@ While that Jekyll PDF plugin turned out to be unsuitable, I poked around the
 source a bit and noticed that was simply a wrapper for the [wkhtmltopdf][1]
 HTML-to-PDF tool, which can easily be used in a Netlify build by including the
 [wkhtml-binaries][2] gem in the Ruby `Gemfile`. After much trial &amp;
-error, I made a [small wrapper script][2] that Netlify will execute right after
+error, I made a [small wrapper script][3] that Netlify will execute right after
 running `jekyll build`. A couple bumps along the road as I figured out how to
 generate the PDF:
 
