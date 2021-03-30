@@ -4,7 +4,7 @@ layout: home
 
 <img title="actual size" id="home-photo" src="/assets/home-photo.jpg" />
 
-Charlie Tran is a programmer in Brooklyn, NY.
+Charlie Tran is a programmer, somewhere in America.
  
 Currently:  
 Leading backend & infra at [Parsec](https://parsec.app), independently [creating games](https://charlietran.itch.io/)
